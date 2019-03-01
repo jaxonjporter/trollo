@@ -1,4 +1,4 @@
 <h1 class="title"><%= @board.name.upcase %></h1>
 <% @board.lists.each do |l| %>
-  <%= link_to l.name, [@list, l] %>
+  <%= link_to l.name, board_list_path(@board, l) %>
 <% end %>

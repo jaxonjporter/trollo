@@ -5,17 +5,17 @@
     email: 'test@test.com',
     password: 'password'
   )
-10.times do
+5.times do
   b = Board.create(
     name: Faker::Name.first_name,
     user_id: u.id
   )
-  10.times do
+  5.times do
     l = b.lists.create(
       name: Faker::Name.first_name,
       board_id: b.id
     )
-    10.times do
+    5.times do
      t = l.tasks.create(
         name: Faker::Name.first_name,
         done: Faker::Boolean.boolean(0.8),
