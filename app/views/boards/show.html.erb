@@ -1,2 +1,4 @@
-<h1>Boards#show</h1>
-<p>Find me in app/views/boards/show.html.erb</p>
+<h1 class="title"><%= @board.name.upcase %></h1>
+<% @board.lists do |list| %>
+  <%= list.name %>
+<% end %>

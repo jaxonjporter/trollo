@@ -11,11 +11,14 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
 gem 'devise'
 gem 'semantic-ui-sass'
+
 group :development, :test do
   gem 'pry'
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 group :development do

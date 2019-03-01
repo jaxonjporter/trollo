@@ -1,0 +1,32 @@
+<div class="col-12 text-center title"><h2>LOGIN</h2></div>
+  <div class="col-12">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-group col-6 offset-3">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name, autofocus: true, autocomplete: "First Name", class: "form-control" %>
+    </div>
+    <div class="form-group col-6 offset-3">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name, autocomplete: "Last Name", class: "form-control" %>
+    </div>
+    <div class="form-group col-6 offset-3">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autocomplete: "email", class: "form-control" %>
+    </div>
+    <div class="form-group col-6 offset-3">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="form-check col 6 offset-3">
+        <%= f.check_box :remember_me, class: "form-check-input"%>
+        <%= f.label :remember_me, class: "form-check-label" %>
+      </div>
+    <% end %>
+    <div class="col-2 offset-5 text-center">
+      <%= f.submit "Log in", class: "btn btn-primary btn-block mt-2"%>
+      <% end %>
+    </div>
+<div class="col-12 text-center">
+<%= render "devise/shared/links" %>

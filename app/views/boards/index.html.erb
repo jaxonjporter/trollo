@@ -1,2 +1,18 @@
-<h1>Boards#index</h1>
-<p>Find me in app/views/boards/index.html.erb</p>
+
+<div class="col-sm-12 gridBorder title text-center mt-2"><h1>BOARDS</h1></div>
+  <% @boards.each do |board| %>
+    <div class="col-sm-4 gridBorder text-center">
+      <%= link_to board.name , board_path(board)%>
+      <div class="row text-center">
+        <div class="col-6">
+          <%= link_to "Edit", edit_board_path(board) %>
+        </div>
+        <div class="col-6">
+          <%= link_to "Delete", board_path(board), method: :delete %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="col-4 offset-4 text-center">
+</div>
