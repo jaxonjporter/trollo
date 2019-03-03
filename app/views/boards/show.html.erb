@@ -1,4 +1,29 @@
-<h1 class="title"><%= @board.name.upcase %></h1>
+<div class="col-sm-12 title text-center mt-2"><h1><%= @board.name.upcase %></h1></div>
 <% @board.lists.each do |l| %>
-  <%= link_to l.name, board_list_path(@board, l) %>
+ <div class="col-sm-4">
+    <div class="card text-white bg-dark text-center m-3">
+      <div class="card-header">
+        <h1 class="card-title">
+          <%= link_to l.name, board_list_path(@board, l) %>
+        </h1>
+      </div>
+      <% l.tasks.each do |t| %>
+        <div class="card-text text-left m-2 ml-3">
+          <%= t.name %>
+        </div>
+      <% end %>
+      <div class="row text-center">
+        <div class="col-6">
+          <div class="m-3">
+            <%= link_to "Edit", edit_board_list_path(@board, l) %>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="m-3">
+            <%= link_to "Delete", board_list_path(@board, l), method: :delete %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>

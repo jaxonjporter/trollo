@@ -1,0 +1,9 @@
+<div class="col-6 offset-3">
+  <%= form_with(model: [@list, @task], local: true) do |f| %>
+    <div class="form-group">
+      <%= f.label :name, class: "title text-uppercase" %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <%= f.submit nil, class: "btn btn-primary" %>
+<% end %>
+</div>

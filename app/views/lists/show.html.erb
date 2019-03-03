@@ -1,4 +1,44 @@
-<h1><%= @list.name %></h1>
+
+
+<div class="col-sm-12 title text-center mt-2"><h1><%= @list.name.upcase %></h1></div>
 <% @list.tasks.each do |t| %>
-  <%= t.name %>
+ <div class="col-sm-4">
+    <div class="card text-white text-center m-3 cardback">
+      <div class="card-header">
+        <h1 class="card-title">
+          <%= t.name %>
+        </h1>
+      </div>
+      <div class="row ">
+        <div class="col-6">
+          <div class="text-center m-3">
+            <%= link_to "Edit", edit_list_task_path(@list, t) %>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="text-center m-3">
+            <%= link_to "Complete", list_task_path(@list, t), method: :delete %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
+ <div class="col-sm-4">
+    <div class="card text-white text-center m-3 cardback">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-6">
+            <div class="m-2">
+            <%= link_to "New Task", new_list_task_path(@list, @task) %>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="m-2">
+            <%= link_to "Back", board_path(@board) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
