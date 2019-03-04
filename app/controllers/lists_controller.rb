@@ -18,7 +18,7 @@ class ListsController < ApplicationController
   
       if @list.save
         # redirect_to [@sub, @topic]
-        redirect_to board_lists_path(@board, @list)
+        redirect_to board_path(@board, @list)
       else
         render :new
       end

@@ -27,3 +27,21 @@
     </div>
   </div>
 <% end %>
+<div class="col-sm-4">
+    <div class="card text-white bg-dark text-center m-3">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-6">
+            <div class="m-2">
+            <%= link_to "New List", new_board_list_path(@board, @list) %>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="m-2">
+            <%= link_to "Back", boards_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
